@@ -21,9 +21,33 @@ const scores = [
   "2:4",
   "3:4"
 ];
-
+// console.log(scores, typeof scores);
 function getPoints(array) {
   // Your code here !
+  // order scores for easly comparison 
+  // create loop to check if my team score is higher than other team
+  for(let i = 0; i <array.length; i++){
+    var array = array.sort((a,b)=>{
+  // stablish connection between score and points 
+      //a > b = 3pts
+    if (a > b){
+      return 3
+      //a = b = 1pts
+    }else if (a == b){
+      return 1
+      //a < b = 0pt
+    }else{
+      return 0
+    }})
+  }
+console.log(array);
+
+
+// create accumulator for points conquered
+
+
+
+
 }
 
 console.log(getPoints(scores));
