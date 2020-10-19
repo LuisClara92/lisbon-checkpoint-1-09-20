@@ -79,9 +79,9 @@ img {
   max-width: 100%;
 }
 
-.projects a {
+/* .projects a {
   color: #750ff7;
-}
+} */
 h2{
   display: flex;
   justify-content: center;

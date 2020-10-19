@@ -15,25 +15,28 @@ function sumArr(arrayA, arrayB) {
   // let sum = 0;
 
   // for(var i=0; i< arrayA.length; i++) {
-  //   sum = arrayA[i]+arrayB[i];
+  //   sum = parseInt(arrayA[i])+parseInt(arrayB[i]);
   // }
     
   // return sum
 
-  //TRY 2
-  var sum = arrayA.map(function (num, idx) {
-    return (num + arrayB[idx]);
-  })
-  return sum
-
-  //TRY 3
-  // var arrayC = [];
-  // for (var i = 0; i < Math.max(arrayA.length, arrayB.length); i++) {
-  //   arrayC.push((arrayA[i] || 0) + (arrayB[i] || 0));
-  // }
-  // return arrayC
+  //TRY 2 (DON'T WORKS PERFECTLY ON DIFFERENT LENGTHS)
   
-}
+  // var sum = arrayA.map(function (num, idx) {
+    
+  //   return (parseInt(num) + parseInt(arrayB[idx]));
+  // })
+  // return sum
+
+  //TRY 3 (WORK!!!)
+  var arrayC = [];
+  for (var i = 0; i < Math.max(arrayA.length, arrayB.length); i++) {
+    arrayC.push((parseInt(arrayA[i]) || 0) + (parseInt(arrayB[i]) || 0));
+  }
+  return arrayC
+  
+ }
+
 
 console.log(sumArr( ["1", "2", "3"], ["2", "4", "1"] ))//["3", "6", "4"]
 console.log(sumArr( ["2", "7", "3"], ["2", "4", "9"] ))//["4", "11", "12"]
